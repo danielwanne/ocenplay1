@@ -1,22 +1,14 @@
-// script.js
-document.addEventListener('DOMContentLoaded', function() {
-    // Inicialização do mapa com Leaflet
-    const map = L.map('map').setView([-23.5505, -46.6333], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-    }).addTo(map);
-    
-    // Função para calcular impacto
-    function calcularImpacto() {
-        // Lógica para calcular impacto
-    }
-    
-    // Função para carregar dados do dashboard
-    function carregarDashboard() {
-        // Lógica para carregar dados
-    }
-    
-    // Chamar funções
-    calcularImpacto();
-    carregarDashboard();
+document.getElementById('form-coleta').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const quantidade = document.getElementById('quantidade').value;
+    registrarColeta(quantidade);
 });
+
+function registrarColeta(quantidade) {
+    // Aqui você integraria a lógica de blockchain para registrar a coleta
+    const certificadosDiv = document.getElementById('lista-certificados');
+    const novoCertificado = document.createElement('div');
+    novoCertificado.textContent = `Coleta registrada: ${quantidade} kg de plástico.`;
+    certificadosDiv.appendChild(novoCertificado);
+    // Implementar lógica de pagamento e segurança de dados
+}
